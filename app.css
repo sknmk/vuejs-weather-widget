@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+html * {
+	font-family: 'Rubik', sans-serif;
+}
+.thin {
+	font-weight: 300;
+}
+
+.widget-container {
+	border: none;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.widget-container .card-title {
+	letter-spacing: 3px;
+	color: #666;
+	text-transform: uppercase;
+}
+
+.widget-container #widgetMap {
+	transform: translateY(-3rem);
+}
+
+.shadow-2 {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.location-bar {
+	position: absolute;
+	bottom: -.5rem;
+	background: white;
+	color: black;
+	padding: 2px 8px;
+	right: -.4rem;
+	border-radius: .25rem;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.location-bar2 {
+	position: absolute;
+	top: -.5rem;
+	background: white;
+	color: black;
+	padding: 2px 8px;
+	left: -.4rem;
+	border-radius: .25rem;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.weather-date {
+	letter-spacing: .25rem;
+	color: #a3a3a3;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 13px;
+	margin-top: .5rem;
+}
+
+.weather-degree {
+	font-weight: 700;
+}

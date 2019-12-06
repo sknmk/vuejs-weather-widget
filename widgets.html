@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
+	<link href="app.css" rel="stylesheet">
+	<title>Weather</title>
+</head>
+<body>
+<div class="container">
+	<div class="row" id="weatherContainer">
+		<div class="offset-lg-2 col-lg-4 offset-md-2 col-md-8 py-5">
+			<div class="card widget-container">
+				<div class="card-body">
+					<div id="mapContainer"></div>
+					<div class="row pb-1">
+						<div class="col-6 display-4 align-self-center">
+							<weather-icon :condition="weather.condition"></weather-icon>
+						</div>
+						<div class="col-6 display-4 text-right">
+							{{weather.temperature}}°
+						</div>
+						<div class="col-6">
+							<i class="lni-pin"></i> {{location.city}}
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-8 py-5">
+			<div class="card widget-container">
+				<div class="card-body py-0 px-0">
+					<div class="container-fluid px-0">
+						<div class="row py-5">
+							<div class="col-12 display-1 text-center mt-4">
+								<weather-icon :condition="weather.condition"></weather-icon>
+							</div>
+						</div>
+						<div class="row px-3">
+							<div class="col-6 pt-2 text-right">
+								<h3 class=" mb-0">{{weather.condition}}</h3>
+								{{location.city}}, {{location.country}}
+							</div>
+							<div class="col-6 display-4">
+								{{weather.temperature}}°
+							</div>
+						</div>
+						<div class="row text-center mt-4 py-5 bg-dark mx-0 rounded-bottom text-white">
+							<div class="col px-1">
+								<h6 class="mb-0"><i class="lni-pulse"></i> {{weather.wind}}kmh</h6>
+							</div>
+							<div class="col px-1">
+								<h6 class="mb-0"><i class="lni-drop"></i> {{weather.humidity}}%</h6>
+							</div>
+							<div class="col px-1">
+								<h6 class="mb-0"><i class="lni-dashboard"></i> {{weather.pressure}}mb</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="offset-lg-2 col-lg-8 py-5">
+			<div class="card widget-container" id="weatherContainer3">
+				<div class="card-body pb-0">
+					<div class="row mb-4">
+						<div class="col-12">
+							<div class="row pt-3">
+								<div class="col">
+									<div class="rounded text-center py-2">
+										<div class="row">
+											<div class="col-12">
+												<weather-icon :condition="weather.condition" class="display-4"></weather-icon>
+											</div>
+											<div class="col-12 align-self-center weather-degree">{{weather.temperature}}°</div>
+											<div class="col-12 weather-date">Bugün</div>
+										</div>
+									</div>
+								</div>
+								<div class="col" v-for="day in forecast.data">
+									<div class=" rounded text-center py-2">
+										<div class="row">
+											<div class="col-12">
+												<weather-icon :condition="day.condition" class="display-4"></weather-icon>
+											</div>
+											<div class="col-12 align-self-center weather-degree">{{day.temperature}}°</div>
+											<div class="col-12 weather-date">{{day.date}}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="location-bar2 bg-warning text-dark">
+						<i class="lni-pin"></i> {{location.city}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
