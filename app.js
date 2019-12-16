@@ -78,6 +78,8 @@ const weatherApp = new Vue({
 			this.weather.humidity = this.api.response.list[0].main.humidity;
 			this.weather.pressure = this.api.response.list[0].main.pressure;
 			this.weather.wind = this.api.response.list[0].wind.speed;
+
+
 			this.weather.temperature
 					= Number((this.api.response.list[0].main.temp - 273.15)
 					.toFixed(1));
